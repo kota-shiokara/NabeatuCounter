@@ -22,6 +22,7 @@ fun main() {
                 }
             ) {
                 Text(value = "Count: ${countFrame.count}")
+                if(countFrame.isAho) Text(value = "Aho")
             }
 
             Div {
@@ -44,6 +45,17 @@ fun main() {
                     }
                 ) {
                     Text("Stop")
+                }
+
+                Button(
+                    attrs = {
+                        onClick {
+                            if(countFrame.isStart) window.clearTimeout(counter.resetCount())
+                            else counter.resetCount()
+                        }
+                    }
+                ) {
+                    Text("Reset")
                 }
             }
 
