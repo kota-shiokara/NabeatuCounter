@@ -3,9 +3,7 @@ package core
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import data.CountFrame
-import org.jetbrains.compose.web.css.CSSUnit
 
 class NabeatuCounter : Counter {
     private val _countFrame: MutableState<CountFrame> by lazy {
@@ -35,7 +33,7 @@ class NabeatuCounter : Counter {
     override fun checkAho(num: Int): Boolean {
         val tmp = num + 1
         val regex = Regex("3")
-        when{
+        when {
             tmp % 3 == 0 -> {
                 return true
             }
