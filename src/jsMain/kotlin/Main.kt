@@ -10,7 +10,7 @@ import org.w3c.dom.get
 
 fun main() {
     val counter: Counter = NabeatuCounter()
-    val body = document.getElementsByTagName("body")[0] as HTMLElement
+    //val body = document.getElementsByTagName("body")[0] as HTMLElement
     //var count = window.setInterval()
     renderComposable(rootElementId = "root") {
         Div {
@@ -28,7 +28,7 @@ fun main() {
                 Button(
                     attrs = {
                         onClick {
-                            val id = window.setInterval(handler = console.log("a") , timeout = 1000)
+                            val id = window.setInterval(handler = { counter.increment() } , timeout = 1000)
                             counter.setInterval(id)
                         }
                     }
