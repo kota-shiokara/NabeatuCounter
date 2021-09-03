@@ -1,7 +1,8 @@
 package style
 
-import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.Color.red
+import org.jetbrains.compose.web.css.Color.white
 
 object MainStyle : StyleSheet(AppStyleSheet) {
     object HeaderStyle : StyleSheet(AppStyleSheet) {
@@ -12,7 +13,7 @@ object MainStyle : StyleSheet(AppStyleSheet) {
             width(100.percent)
             //property("transition", "all 300ms 0s ease")
 
-            backgroundColor(Color.red)
+            backgroundColor(red)
         }
 
         val HeaderLight by style {
@@ -24,16 +25,47 @@ object MainStyle : StyleSheet(AppStyleSheet) {
         }
 
         val HeaderText by style {
-            property("text-align", "center")
+            textAlign("center")
             width(100.percent)
+            color(white)
         }
     }
 
     object CounterStyle : StyleSheet(AppStyleSheet) {
+        val Counter by style {
 
+            width(100.percent)
+            height(50.percent)
+            //debugBorder(darkblue)
+        }
+
+        val CounterText by style {
+            textAlign("center")
+            height(50.percent)
+            top(50.percent)
+        }
     }
 
-    object ButtonStyle : StyleSheet(AppStyleSheet) {
+    object ButtonsStyle : StyleSheet(AppStyleSheet) {
+        val Buttons by style {
+            margin("auto")
+            display(DisplayStyle.Flex)
+            //debugBorder(red)
+        }
 
+        val Button by style {
+            display(DisplayStyle.InlineBlock)
+            textAlign("center")
+            padding(10.px, 30.px)
+            color(white)
+            border(1.px, LineStyle.Solid)
+            margin(5.px)
+            cursor("pointer")
+            backgroundColor(red)
+        }
     }
+}
+
+fun StyleBuilder.debugBorder(color: CSSColorValue){
+    border(5.px, LineStyle.Solid, color)
 }
