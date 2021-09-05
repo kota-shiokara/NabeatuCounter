@@ -10,4 +10,5 @@ interface Counter {
     fun checkAho(num: Int): Boolean
     fun setInterval(intervalID: Int)
     fun clearInterval(): Int
+    fun setCount(count: Int)
 }

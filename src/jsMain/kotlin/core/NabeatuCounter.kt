@@ -53,4 +53,8 @@ class NabeatuCounter : Counter {
         _countFrame.value = countFrame.value.copy(isStart = false, intervalID = 0)
         return tmp
     }
+
+    override fun setCount(count: Int){
+        _countFrame.value = countFrame.value.copy(count = count)
+    }
 }

@@ -6,7 +6,6 @@ import core.Counter
 import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Table
 import org.jetbrains.compose.web.dom.Text
 import style.MainStyle
 
@@ -14,6 +13,7 @@ import style.MainStyle
 fun Buttons(component: Counter) {
     // TODO: ここにボタンたちのコンポーネント
     val model by component.countFrame
+    val isDebug = false
     Div(
         attrs = {
             classes("buttons")
@@ -55,6 +55,31 @@ fun Buttons(component: Counter) {
             }
         ) {
             Text("Reset")
+        }
+
+        if(isDebug){
+            Button(
+                attrs = {
+                    classes(MainStyle.ButtonsStyle.Button)
+                    onClick {
+                        component.setCount(30)
+                    }
+                }
+            ) {
+                Text("Debug")
+            }
+
+            val debug2 = 30000
+            Button(
+                attrs = {
+                    classes(MainStyle.ButtonsStyle.Button)
+                    onClick {
+                        component.setCount(debug2)
+                    }
+                }
+            ) {
+                Text("Debug $debug2")
+            }
         }
     }
 }

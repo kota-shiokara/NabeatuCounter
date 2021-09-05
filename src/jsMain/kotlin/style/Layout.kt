@@ -11,9 +11,9 @@ fun Layout(content: @Composable () -> Unit){
         style{
             display(DisplayStyle.Flex)
             flexDirection(FlexDirection.Column)
-            height(100.percent)
-            margin(0.px)
+            height(100.vh)
             property("box-sizing", "border-box")
+            width(100.vw)
         }
     }){
         content()

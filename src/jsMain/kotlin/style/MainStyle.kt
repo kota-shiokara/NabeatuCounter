@@ -7,12 +7,9 @@ import org.jetbrains.compose.web.css.Color.white
 object MainStyle : StyleSheet(AppStyleSheet) {
     object HeaderStyle : StyleSheet(AppStyleSheet) {
         val Header by style {
-            //property("box-sizing", "border-box")
-            //position(Position.Fixed)
             display(DisplayStyle.Flex)
             width(100.percent)
-            //property("transition", "all 300ms 0s ease")
-
+            padding(2.5.vh, 0.vw)
             backgroundColor(red)
         }
 
@@ -28,21 +25,25 @@ object MainStyle : StyleSheet(AppStyleSheet) {
             textAlign("center")
             width(100.percent)
             color(white)
+            fontSize(3.em)
         }
     }
 
     object CounterStyle : StyleSheet(AppStyleSheet) {
         val Counter by style {
-
-            width(100.percent)
-            height(50.percent)
-            //debugBorder(darkblue)
+            padding(30.vh, 30.vw)
+            textAlign("center")
         }
 
         val CounterText by style {
             textAlign("center")
-            height(50.percent)
-            top(50.percent)
+            fontSize(6.em)
+            border(5.px, LineStyle.Solid, white)
+        }
+
+        val AhoCircle by style {
+            borderRadius(50.percent)
+            border(5.px, LineStyle.Solid, red)
         }
     }
 
@@ -51,15 +52,16 @@ object MainStyle : StyleSheet(AppStyleSheet) {
             margin("auto")
             display(DisplayStyle.Flex)
             //debugBorder(red)
+            justifyContent(JustifyContent.SpaceEvenly)
         }
 
         val Button by style {
             display(DisplayStyle.InlineBlock)
             textAlign("center")
-            padding(10.px, 30.px)
+            fontSize(1.em)
+            padding(10.px, 40.px)
             color(white)
             border(1.px, LineStyle.Solid)
-            margin(5.px)
             cursor("pointer")
             backgroundColor(red)
         }

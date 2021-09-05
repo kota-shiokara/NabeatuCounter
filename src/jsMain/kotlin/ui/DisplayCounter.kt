@@ -20,10 +20,23 @@ fun DisplayCounter(component: Counter) {
         Div(
             attrs = {
                 classes(MainStyle.CounterStyle.CounterText)
+                if (model.isAho) classes(MainStyle.CounterStyle.AhoCircle)
             }
         ) {
             Text(value = "${model.count}")
         }
+//        if (model.isAho) AhoCircle()
 //        if (model.isAho) Text(value = "Aho")
+    }
+}
+
+@Composable
+fun AhoCircle(){
+    Div(
+        attrs = {
+            classes(MainStyle.CounterStyle.AhoCircle)
+        }
+    ) {
+
     }
 }
